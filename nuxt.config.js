@@ -1,10 +1,6 @@
 module.exports = {
-    mode: 'universal',
-    /*
-     ** Headers of the page
-     */
     head: {
-        title: process.env.npm_package_name || '',
+        title: 'Tuitmud 🦜',
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -43,7 +39,7 @@ module.exports = {
     /*
      ** Customize the progress-bar color
      */
-    loading: { color: '#fff' },
+    loading: { color: '#fff00' },
     /*
      ** Global CSS
      */
@@ -52,8 +48,12 @@ module.exports = {
      ** Plugins to load before mounting the App
      */
     plugins: [],
+    axios: {
+        proxy: true,
+        baseUrl: '/'
+    },
     router: {
-        middleware: ['ssr-cookie']
+        middleware: ['randomPeep']
     },
     /*
      ** Nuxt.js dev-modules
@@ -65,8 +65,16 @@ module.exports = {
     modules: [
         '@nuxtjs/style-resources',
         '@nuxtjs/global-components',
+        // '@nuxtjs/proxy',
         'cookie-universal-nuxt',
+        '@nuxtjs/axios',
     ],
+    proxy: {
+        '/apis/': {
+            target: 'http://localhost:8080',
+            pathRewrite: { '^/apis': '' },
+        },
+    },
     styleResources: {
         scss: ['@assets/styles/variables.scss']
     },

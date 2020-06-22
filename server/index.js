@@ -2,6 +2,7 @@ const express = require('express')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
 const router = express.Router()
+const cors = require('cors')
 const app = express()
 
 // Import and Set Nuxt.js options
@@ -22,6 +23,7 @@ async function start() {
     }
 
     // Give nuxt middleware to express
+    app.use(cors())
     app.use(nuxt.render)
 
     router.use((req, res, next) => {

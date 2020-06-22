@@ -1,81 +1,84 @@
 <template>
-<div class="row m-0">
-    <div class="col-12">
-      <sentiment-card/>
+  <div class="row m-0">
+    <div class="col-12" v-for="(sentiment, sentimentIndex) in sentiments" :key="sentimentIndex">
+      <sentiment-card v-bind="sentiment" />
     </div>
-    <h3 class="title-section">
-      {{activeResult | topicTitle}}
-    </h3>
     <div class="col-12 mb-3">
-      <personal-card/>
+      <h3 class="title-section">{{activeResult | topicTitle}}</h3>
+      <topic-card v-for="(topic, topicIndex) in topics" :key="topicIndex" v-bind="topic" />
     </div>
-    <h3 class="title-section">
-      {{activeResult | entityTitle}}
-    </h3>
-    <div class="col-12 mb-3">
-      <topic-card/>
-    </div>
-    <div class="col-12 mb-3 mt-4">
-      <entity-card/>
+    <div class="col-12 mt-2 mb-3">
+      <h3 class="title-section mb-4">{{activeResult | entityTitle}}</h3>
+      <entity-card v-for="(entity, entityIndex) in entities" :key="entityIndex" v-bind="entity" />
     </div>
   </div>
 </template>
 
 <script>
-import PersonalCard from '@/components/molecules/results/PersonalCard';
-import SentimentCard from '@/components/molecules/results/SentimentCard';
-import TopicCard from '@/components/molecules/results/TopicCard';
-import EntityCard from '@/components/molecules/results/EntityCard';
-import { mapState } from 'vuex';
+import PersonalCard from "@/components/molecules/results/PersonalCard";
+import SentimentCard from "@/components/molecules/results/SentimentCard";
+import TopicCard from "@/components/molecules/results/TopicCard";
+import EntityCard from "@/components/molecules/results/EntityCard";
+import { mapState } from "vuex";
 
 export default {
-  name: 'ResultContent',
+  name: "ResultContent",
   components: {
     PersonalCard,
     SentimentCard,
     TopicCard,
-    EntityCard,
+    EntityCard
   },
   computed: {
-    ...mapState({
-      activeResult: (state) => state.activeResult,
-    }),
+    sentiments() {
+      const activeResult = this.$store.getters.activeResultTarget;
+      return this.$store.state.analizedText[activeResult].sentiments;
+    },
+    topics() {
+      const activeResult = this.$store.getters.activeResultTarget;
+      return this.$store.state.analizedText[activeResult].concepts;
+    },
+    entities() {
+      const activeResult = this.$store.getters.activeResultTarget;
+      return this.$store.state.analizedText[activeResult].entities;
+    },
+    ...mapState(["activeResult"])
   },
   filters: {
-    topicTitle:(activeResult) => {
+    topicTitle: activeResult => {
       switch (activeResult) {
-        case 'Yo':
-          return 'Mis temas favoritos'
-        break;
+        case "Yo":
+          return "Mis temas favoritos";
+          break;
 
-        case 'Gustos':
-          return 'Temas que leo'
-        break;
+        case "Gustos":
+          return "Temas que leo";
+          break;
 
-        case 'Amigos':
-          return 'Lo que hablo con mis amigos'
-        break;
+        case "Amigos":
+          return "Lo que hablo con mis amigos";
+          break;
 
         default:
-        break;
+          break;
       }
     },
-    entityTitle:(activeResult) => {
+    entityTitle: activeResult => {
       switch (activeResult) {
-        case 'Yo':
-          return 'Mis personas favoritas'
-        break;
+        case "Yo":
+          return "Mis cosas favoritas";
+          break;
 
-        case 'Gustos':
-          return 'Las personas que leo'
-        break;
+        case "Gustos":
+          return "Las cosas que leo";
+          break;
 
-        case 'Amigos':
-          return 'Personas favoritas con mis amigos'
-        break;
+        case "Amigos":
+          return "Cosas favoritas con mis amigos";
+          break;
 
         default:
-        break;
+          break;
       }
     }
   }
@@ -83,7 +86,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.title-section{
+.title-section {
   text-align: center;
 }
 </style>

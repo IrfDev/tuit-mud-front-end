@@ -1,14 +1,8 @@
 <template>
   <div class="login container-fluid">
-      <circle-background
-        class="align-self-center"
-      />
+    <circle-background class="align-self-center" />
     <div class="background-page-image col-12 pt-5">
-        <img
-          src="/images/peeps/pepe/background-login.png"
-          alt="iniciar-sesion"
-          class="img-fluid"
-        >
+      <peep action="chill" width="100" />
     </div>
     <div class="col-12">
       <basic-card
@@ -24,31 +18,32 @@
 </template>
 
 <script>
-import BasicCard from '@/components/molecules/BasicCard';
+import BasicCard from "@/components/molecules/BasicCard";
 
 export default {
-  name: 'IniciarSesión',
+  name: "IniciarSesión",
   components: {
-    BasicCard,
+    BasicCard
   },
   computed: {
-    contentCard:() => 'Inicia sesión en tu cuenta de Twitter y obtén los resultados en menos de 30 segundos.'
+    contentCard: () =>
+      "Inicia sesión en tu cuenta de Twitter y obtén los resultados en menos de 30 segundos."
   },
   methods: {
     goToTwitterAuth() {
-      window.open('http://localhost:8080/auth/twitter', '_self');
-    },
-  },
+      window.open("http://localhost:8080/auth/twitter", "_self");
+    }
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-.background-page-image{
+.background-page-image {
   // padding-top: 90vw;
-  margin-bottom:-30vw;
+  margin-bottom: -30vw;
 }
 .login {
-  min-height:100vh;
-  background-color:$alpha-color;
+  min-height: 100vh;
+  background-color: $alpha-color;
 }
 </style>
