@@ -8,3 +8,22 @@ $font-weight-title: bolder;
 $font-weight-paragraph: 400;
 $box-shadow-alpha:0px 6px 0px #18191F;
 $gamma-color:#1947E5;
+
+// .container-fluid{
+//   width: 100%;
+//   display: flex;
+//   flex-flow: row wrap;
+// }
+
+// .row{
+//   display:flex;
+//   flex-flow: row wrap;
+// }
+
+// [class*="col-"] {
+//   --width: 4;
+//   --gap: calc((var(--columns) - var(--width))*1%);
+//   --initialBasis: calc(var(--width)/ var(--columns)*100%);
+//     flex-basis: calc(var(--initialBasis) - var(--gap));
+//   transition: 2s right ease-in;
+// }
