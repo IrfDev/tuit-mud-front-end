@@ -1,13 +1,13 @@
 <template>
   <div class="switch-component d-flex justify-content-around text-center" @click="clickObject">
-    <div class="nav text-center" :class="{ select: select === 'Yo' }">
-      <a>Yo</a>
+    <div class="nav text-center" :class="{ select: select === 'Me' }">
+      <a>Me</a>
     </div>
-    <div class="nav text-center" :class="{ select: select === 'Gustos' }">
-      <a>Gustos</a>
+    <div class="nav text-center" :class="{ select: select === 'Likes' }">
+      <a>Likes</a>
     </div>
-    <div class="nav text-center" :class="{ select: select === 'Amigos' }">
-      <a>Amigos</a>
+    <div class="nav text-center" :class="{ select: select === 'Friends' }">
+      <a>Friends</a>
     </div>
   </div>
 </template>
@@ -50,6 +50,7 @@ a {
   justify-content: center;
 }
 .switch-component {
+  cursor: pointer;
   background: white;
   border: 2px solid black;
   border-radius: 50px;

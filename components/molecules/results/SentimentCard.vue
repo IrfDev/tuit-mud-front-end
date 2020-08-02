@@ -21,27 +21,52 @@
 <script>
 export default {
   name: 'SentimentalCard',
+
   props: {
     label: {
       type: String,
       required: true,
     },
+
     score: {
       type: Number,
       required: true,
     },
   },
+
+  data() {
+    return {
+      positiveResponses: [
+        "I smile to everything, it doesn't matter the why 😁",
+        "You can't kill my vibe, I'm totally positive right now 😌",
+        'I love to think the world and time are on my side 😋',
+      ],
+
+      negativeResponses: [
+        "I'm kind of darkie but deep inside I smile to everyone 🌚",
+        'I see everything just the way it is 🤪',
+        'I see myself like a realistic person 🤓',
+      ],
+
+      neutralResponses: [
+        "I'm just chilling all the time, please don't butter me 🦦",
+        "The chilliest person in town, the sun chill when I'm out 🌞",
+        "If you look for 'Chill person' in Google I'll be the first result",
+      ],
+    };
+  },
+
   computed: {
     intro() {
       switch (this.label) {
         case 'positive':
-          return 'Persona positiva';
+          return 'Positive person';
           break;
         case 'negative':
-          return 'Amante del drama';
+          return 'Drama lover';
           break;
         case 'neutral':
-          return 'Neutral ante todo';
+          return 'Neutral above all';
           break;
 
         default:
@@ -49,16 +74,18 @@ export default {
       }
       // return this.data
     },
+
     explanation() {
+      const randomNumber = Math.ceil(Math.random() * 3);
       switch (this.label) {
         case 'positive':
-          return 'Me encanta pensar que el mundo está a mi favor';
+          return this.positiveResponses[randomNumber - 1];
           break;
         case 'negative':
-          return 'Soy medio darks, pero muy en el fondo sonrío a todos';
+          return this.negativeResponses[randomNumber - 1];
           break;
         case 'neutral':
-          return 'Me da igual todo, que se caiga el mundo, seguiré bien';
+          return this.neutralResponses[randomNumber - 1];
           break;
 
         default:

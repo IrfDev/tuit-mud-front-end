@@ -23,11 +23,24 @@ export default {
     },
   },
 
+  data() {
+    return {
+      positiveResponses: [
+        'I love it 😍, I could talk all day about it',
+        'One of my favorite topics ⚡️, I cant live without it',
+        "I don't get how people are not talking about this right now! 🤔😛",
+        'I literally can write a book about it! 🤓',
+        'This topic is like wooh! and yeepa! together 😎😂',
+      ],
+    };
+  },
+
   computed: {
     explanation() {
+      const randomNumber = Math.ceil(Math.random() * 5);
       switch (this.relevance * 10) {
         case this.relevance < 4:
-          return 'Me gusta un poco';
+          return 'I like a little';
           break;
 
         case this.relevance < 8:
@@ -35,7 +48,7 @@ export default {
           break;
 
         default:
-          return 'Me mama, podría hablar toda la vida';
+          return this.positiveResponses[randomNumber - 1];
           break;
       }
     },

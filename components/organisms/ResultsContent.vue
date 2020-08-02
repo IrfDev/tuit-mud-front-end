@@ -70,15 +70,15 @@ export default {
   filters: {
     topicTitle: (activeResult) => {
       switch (activeResult) {
-        case 'Yo':
+        case 'Me':
           return 'My favorite topics';
           break;
 
-        case 'Gustos':
+        case 'Likes':
           return 'Topics that I read';
           break;
 
-        case 'Amigos':
+        case 'Friends':
           return 'Topics that my friends like';
           break;
 
@@ -88,16 +88,16 @@ export default {
     },
     entityTitle: (activeResult) => {
       switch (activeResult) {
-        case 'Yo':
-          return 'Mis cosas favoritas';
+        case 'Me':
+          return 'My favorite stuff';
           break;
 
-        case 'Gustos':
-          return 'Las cosas que leo';
+        case 'Likes':
+          return 'Stuff that I read';
           break;
 
-        case 'Amigos':
-          return 'Cosas favoritas con mis amigos';
+        case 'Friends':
+          return 'Stuff with my friends';
           break;
 
         default:

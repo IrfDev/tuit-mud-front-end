@@ -53,7 +53,7 @@ export default {
 
 <style lang="scss">
 .Intro {
-  min-width: 100vw;
+  width: 100%;
   background-color: $gamma-color;
   border-radius: 0px 0px 32px 32px;
   h1,

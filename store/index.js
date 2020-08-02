@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const state = () => ({
-  activeResult: 'Yo',
+  activeResult: 'Me',
   results: {},
   user: {},
   tweets: {
@@ -20,11 +20,11 @@ const state = () => ({
 const getters = {
   activeResultTarget: state => {
     switch (state.activeResult) {
-      case 'Yo':
+      case 'Me':
         return 'tweets';
-      case 'Gustos':
+      case 'Likes':
         return 'favs';
-      case 'Amigos':
+      case 'Friends':
         return 'mentions';
     }
   },
