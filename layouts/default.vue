@@ -7,6 +7,20 @@
 <script>
   export default {
     name: 'DefaultLayout',
+
+    head() {
+      return {
+        titleTemplate: '%s | Tuitmud 🦜',
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content:
+              'Know your mood, topics and stuff you like from your Tweets',
+          },
+        ],
+      };
+    },
   };
 </script>
 

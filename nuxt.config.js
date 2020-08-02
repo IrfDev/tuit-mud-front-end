@@ -7,7 +7,7 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || '',
+        content: 'Know your mood, topics and stuff you like from your Tweets',
       },
     ],
     link: [
@@ -75,6 +75,12 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-174279015-1',
+      },
+    ],
     '@nuxtjs/style-resources',
     '@nuxtjs/global-components',
     // '@nuxtjs/proxy',
