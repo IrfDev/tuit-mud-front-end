@@ -1,7 +1,7 @@
 <template>
   <div class="social-media-mocks justify-content-center d-flex flex-column mt-3 mb-3">
     <div class="d-flex justify-content-start mb-2 mt-3 ml-4 align-self-start">
-      <avatar :name="activePeep" style="h6{text-transform:capitalize}" />
+      <avatar :name="peepToUppercase" style="h6{text-transform:capitalize}" />
     </div>
     <div class="main-image align-self-center">
       <peep action="socialMedia" width="100" />
@@ -16,26 +16,34 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState } from 'vuex';
 export default {
-  name: "SocialMediaMock",
+  name: 'SocialMediaMock',
+
   props: {
     img: {
       type: String,
-      default: "/images/peeps/pepe/main-image.png"
-    }
+      default: '/images/peeps/pepe/main-image.png',
+    },
   },
+
   computed: {
     comments() {
       const randomNumber = Math.floor(Math.random() * (2000 - 0)) + 0;
       return randomNumber;
     },
+
     likes() {
       const randomNumber = Math.floor(Math.random() * (2000 - 0)) + 0;
       return randomNumber;
     },
-    ...mapState(["activePeep"])
-  }
+
+    peepToUppercase() {
+      return this.activePeep.charAt(0).toUpperCase() + this.activePeep.slice(1);
+    },
+
+    ...mapState(['activePeep']),
+  },
 };
 </script>
 

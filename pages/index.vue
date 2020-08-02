@@ -13,17 +13,17 @@
 </template>
 
 <script>
-  import HeaderHome from '~/components/molecules/HeaderHome.vue';
-  import SocialMediaMock from '~/components/molecules/SocialMediaMock.vue';
-  import HomeFeature from '~/components/organisms/HomeFeatures.vue';
+import HeaderHome from '~/components/molecules/HeaderHome.vue';
+import SocialMediaMock from '~/components/molecules/SocialMediaMock.vue';
+import HomeFeature from '~/components/organisms/HomeFeatures.vue';
 
-  export default {
-    components: {
-      SocialMediaMock,
-      HomeFeature,
-      HeaderHome,
-    },
-  };
+export default {
+  components: {
+    SocialMediaMock,
+    HomeFeature,
+    HeaderHome,
+  },
+};
 </script>
 
 <style lang="scss"></style>

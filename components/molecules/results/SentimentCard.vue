@@ -1,7 +1,7 @@
 <template>
   <div class="sentiment card justify-content-between align-items-center d-flex flex-row p-3 mb-3">
     <div class="content">
-      <h5>{{intro}}</h5>
+      <h2>{{intro}}</h2>
       <h6>{{explanation}}</h6>
     </div>
     <div class="sentiment-icon align-item-center">
@@ -20,28 +20,28 @@
 
 <script>
 export default {
-  name: "SentimentalCard",
+  name: 'SentimentalCard',
   props: {
     label: {
       type: String,
-      required: true
+      required: true,
     },
     score: {
       type: Number,
-      required: true
-    }
+      required: true,
+    },
   },
   computed: {
     intro() {
       switch (this.label) {
-        case "positive":
-          return "Persona positiva";
+        case 'positive':
+          return 'Persona positiva';
           break;
-        case "negative":
-          return "Amante del drama";
+        case 'negative':
+          return 'Amante del drama';
           break;
-        case "neutral":
-          return "Neutral ante todo";
+        case 'neutral':
+          return 'Neutral ante todo';
           break;
 
         default:
@@ -51,22 +51,22 @@ export default {
     },
     explanation() {
       switch (this.label) {
-        case "positive":
-          return "Me encanta pensar que el mundo está a mi favor";
+        case 'positive':
+          return 'Me encanta pensar que el mundo está a mi favor';
           break;
-        case "negative":
-          return "Soy medio darks, pero muy en el fondo sonrío a todos";
+        case 'negative':
+          return 'Soy medio darks, pero muy en el fondo sonrío a todos';
           break;
-        case "neutral":
-          return "Me da igual todo, que se caiga el mundo, seguiré bien";
+        case 'neutral':
+          return 'Me da igual todo, que se caiga el mundo, seguiré bien';
           break;
 
         default:
           break;
       }
       // return this.data
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -75,16 +75,19 @@ export default {
   box-shadow: $box-shadow-alpha;
   border: 2px solid black;
   border-radius: 16px;
-  h5,
-  h6 {
-    font-family: $title-font;
-  }
-  h5 {
-    font-weight: 600;
+  h2 {
+    font-weight: 700;
   }
   i {
     color: $gamma-color;
     font-size: 4em;
+  }
+  flex-basis: 90%;
+  @media screen and (min-width: 768px) {
+    flex-basis: 40%;
+  }
+  @media screen and (min-width: 480px) {
+    flex-basis: 80%;
   }
 }
 </style>

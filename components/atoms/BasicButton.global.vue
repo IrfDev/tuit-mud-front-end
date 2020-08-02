@@ -1,5 +1,5 @@
 <template>
-<button
+  <button
     class="basic-button b-none"
     :class="{
       'shadoww':boxShadow,
@@ -8,17 +8,15 @@
     }"
     :style="`backgroundColor: ${customColor}`"
   >
-  <i
-    :class="`fa fa-${ctaIcon}`"
-    aria-hidden="true"
-  />
-      {{content}}
-</button>
+    <i :class="`fa fa-${ctaIcon}`" aria-hidden="true" />
+    {{content}}
+  </button>
 </template>
 
 <script>
 export default {
   name: 'BasicButton',
+
   props: {
     content: {
       type: String,
@@ -48,22 +46,21 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.shadoww{
-  box-shadow: 0px 6px 0px #18191F;
-
+.shadoww {
+  box-shadow: 0px 6px 0px #18191f;
 }
-.main-color{
- background-color:$alpha-color;
- color:white;
+.main-color {
+  background-color: $alpha-color;
+  color: white;
 }
-.complementary-color{
-  background-color:$beta-color;
+.complementary-color {
+  background-color: $beta-color;
 }
-.basic-button{
-  padding: 3% 12%;
+.basic-button {
+  padding: 2% 12%;
   border-radius: $rounded-alpha;
   font-family: $title-font;
-  font-size:6vw;
+  font-size: var(--h3);
   font-weight: bolder;
 }
 </style>

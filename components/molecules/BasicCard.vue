@@ -13,53 +13,49 @@
 </template>
 
 <script>
-  export default {
-    name: 'BasicCard',
-    props: {
-      title: {
-        type: String,
-        required: true,
-      },
-      content: {
-        type: String,
-        required: true,
-      },
-      customColor: {
-        type: String,
-      },
-      ctaButton: {
-        type: String,
-      },
-      ctaShadow: {
-        type: Boolean,
-        default: false,
-      },
-      ctaIcon: {
-        type: String,
-      },
+export default {
+  name: 'BasicCard',
+  props: {
+    title: {
+      type: String,
+      required: true,
     },
-    methods: {
-      clickCtaHandler(event) {
-        this.$emit('clickCta', event);
-      },
+    content: {
+      type: String,
+      required: true,
     },
-  };
+    customColor: {
+      type: String,
+    },
+    ctaButton: {
+      type: String,
+    },
+    ctaShadow: {
+      type: Boolean,
+      default: false,
+    },
+    ctaIcon: {
+      type: String,
+    },
+  },
+
+  methods: {
+    clickCtaHandler(event) {
+      this.$emit('clickCta', event);
+    },
+  },
+};
 </script>
 
 <style lang="scss">
-  .basic-card {
-    border-radius: $rounded-alpha;
-    border: 2px solid black;
-    box-shadow: $box-shadow-alpha;
-    z-index: 2;
+.basic-card {
+  border-radius: $rounded-alpha;
+  border: $border-alpha;
+  box-shadow: $box-shadow-alpha;
+  z-index: 2;
 
-    h1,
-    p {
-      font-family: $title-font;
-    }
-    h1 {
-      font-size: 8.5vw;
-      font-weight: bolder;
-    }
+  h1 {
+    font-weight: $font-weight-title;
   }
+}
 </style>

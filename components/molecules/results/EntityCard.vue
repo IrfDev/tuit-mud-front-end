@@ -1,5 +1,5 @@
 <template>
-  <div class="entity-card d-flex align-items-center justify-content-between mt-4 mb-4">
+  <div class="entity-card d-flex align-items-center justify-content-between">
     <div>
       <i
         class="fa"
@@ -11,7 +11,7 @@
         aria-hidden="true"
       />
     </div>
-    <div>
+    <div class="text-left align-self-center d-flex flex-column">
       <h6>{{text}}</h6>
       <p>{{type}}</p>
     </div>
@@ -23,27 +23,27 @@
 
 <script>
 export default {
-  name: "EntityCard",
+  name: 'EntityCard',
   props: {
     sentiment: {
       type: Object,
       default: () => ({
-        label: "neutral"
-      })
+        label: 'neutral',
+      }),
     },
     text: {
       type: String,
-      required: true
+      required: true,
     },
     type: {
       type: String,
-      required: true
+      required: true,
     },
     relevance: {
       type: Number,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
   // data: () => ({
   //   sentiment: {
   //     label: "positive"
@@ -54,17 +54,18 @@ export default {
 
 <style lang="scss">
 .entity-card {
+  width: 100%;
+  height: 100%;
   border-radius: 16px;
-  border: 2px solid black;
+  border: $border-alpha;
   font-family: $title-font;
   h6 {
     font-size: 1.6em;
     font-weight: bolder;
     color: black;
     text-overflow: ellipsis;
-    text-align: center;
     overflow: hidden;
-    max-width: 200px;
+    max-width: 6em;
   }
   p {
     font-weight: 500;
@@ -75,10 +76,10 @@ export default {
     margin-left: 0.1em;
   }
   .overfloww-icon {
-    margin-top: -20%;
+    margin-top: -5em;
     padding: 4% 4%;
     border-radius: 50%;
-    border: 2px solid black;
+    border: $border-alpha;
     box-shadow: $box-shadow-alpha;
     background-color: $alpha-color;
     i {

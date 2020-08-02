@@ -1,8 +1,9 @@
-const peeps = ["dani", "pepe", "lola", "stanley"]
+const peeps = ['dani', 'pepe', 'lola', 'stanley'];
 
 export default function({ store }) {
-    if (store.state.activePeep === undefined) {
-        let randomNumber = Math.ceil(Math.random() * 4)
-        store.state.activePeep = peeps[randomNumber - 1]
-    }
+  if (store.state.activePeep === undefined) {
+    let randomNumber = Math.ceil(Math.random() * 4);
+    // store.state.activePeep = peeps[randomNumber - 1]
+    store.state.activePeep = peeps[1];
+  }
 }
