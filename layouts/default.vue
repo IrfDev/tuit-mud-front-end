@@ -1,12 +1,22 @@
 <template>
   <main>
+    <nav-bar />
     <nuxt />
+    <the-footer />
   </main>
 </template>
 
 <script>
+  import NavBar from '@/components/molecules/Navigation/NavBar.vue';
+  import TheFooter from '@/components/molecules/Navigation/TheFooter.vue';
+
   export default {
     name: 'DefaultLayout',
+
+    components: {
+      NavBar,
+      TheFooter,
+    },
 
     head() {
       return {

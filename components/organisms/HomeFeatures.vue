@@ -1,9 +1,7 @@
 <template>
-  <div class="features row m-0 mb-5">
+  <div class="features row m-0 mb-5 justify-content-around">
     <feature
-      :title="
-        `You're unique and you know it`
-      "
+      :title="`You're unique and you know it`"
       :subtitle="
         'Know yourself a little more with this simple but funny analysis'
       "
@@ -12,21 +10,21 @@
       :title="`Let the world know you`"
       :icon="'share-alt'"
       :subtitle="
-        'Share your results with the world and reflect the real you!'
+        'Share your results with the world and reflect who you really are!'
       "
     />
   </div>
 </template>
 
 <script>
-import Feature from '@/components/molecules/Feature';
+  import Feature from '@/components/molecules/Feature';
 
-export default {
-  name: 'HomeFeatures',
-  components: {
-    Feature,
-  },
-};
+  export default {
+    name: 'HomeFeatures',
+    components: {
+      Feature,
+    },
+  };
 </script>
 
 <style lang="scss"></style>

@@ -7,7 +7,7 @@
         <peep action="chill" width="100" />
         <circle-background class="circle" />
       </div>
-      <div class="col-12 col-lg-6 col-md-8 twitter-login-card">
+      <div class="col-12 col-lg-5 col-md-8 twitter-login-card">
         <basic-card
           :title="'Lets get started!'"
           :content="contentCard"
