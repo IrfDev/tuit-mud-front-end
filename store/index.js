@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 const state = () => ({
   activeResult: 'Me',
   results: {},
@@ -67,9 +65,8 @@ const mutations = {
 
 const actions = {
   async getAuthInfo({ commit }) {
-    const { data } = await axios.get(
-      'http://localhost:3000/apis/auth/login/success'
-    );
+    const data = await this.$axios.$get('/apis/auth/login/success');
+    console.log(data);
     const {
       username,
       name,
@@ -86,30 +83,23 @@ const actions = {
     });
   },
   async getUserTweets({ commit }) {
-    const twittsResponse = await axios.get('http://localhost:3000/apis/tweets');
+    const twittsResponse = await this.$axios.$get('/apis/tweets');
     const twittsText = twittsResponse.data.data.tweetText;
     commit('SET_TWEETS', { target: 'user', data: twittsText });
   },
   async getUserMentions({ commit }) {
-    const twittsResponse = await axios.get(
-      'http://localhost:3000/apis/tweets/mentions'
-    );
+    const twittsResponse = await this.$axios.$get('/apis/tweets/mentions');
     const twittsText = twittsResponse.data.data.tweetText;
     commit('SET_TWEETS', { target: 'mentions', data: twittsText });
   },
   async getUserFavs({ commit }) {
-    const twittsResponse = await axios.get(
-      'http://localhost:3000/apis/tweets/favs'
-    );
+    const twittsResponse = await this.$axios.$get('/apis/tweets/favs');
     const twittsText = twittsResponse.data.data.tweetText;
     commit('SET_TWEETS', { target: 'favs', data: twittsText });
   },
   async analyzeText({ state, commit }, target) {
     const text = state.tweets[target];
-    const dataResponse = await axios.post(
-      `http://localhost:3000/apis/nlu/${target}`,
-      text
-    );
+    const dataResponse = await this.$axios.$post(`/apis/nlu/${target}`, text);
     const analizedText = dataResponse.data.data;
     commit('SET_ANALIZED_TEXT', { target, data: analizedText });
   },

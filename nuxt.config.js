@@ -1,17 +1,29 @@
 module.exports = {
   head: {
+    htmlAttrs: {
+      lang: 'en',
+    },
     title: 'Tuitmud 🦜',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'theme-color', content: '#f95a2c' },
+
       {
         hid: 'description',
         name: 'description',
-        content: 'Know your mood, topics and stuff you like from your Tweets',
+        content:
+          'Know your mood 🤪, topics and stuff you like from your Tweets. Click now! And have some fun with us!',
       },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap',
+        lazyload: true,
+      },
       {
         rel: 'stylesheet',
         href:
@@ -60,10 +72,6 @@ module.exports = {
    ** Plugins to load before mounting the App
    */
   plugins: [],
-  axios: {
-    proxy: true,
-    baseUrl: '/',
-  },
   router: {
     middleware: ['randomPeep'],
   },
@@ -87,9 +95,12 @@ module.exports = {
     'cookie-universal-nuxt',
     '@nuxtjs/axios',
   ],
+  axios: {
+    proxy: true,
+  },
   proxy: {
     '/apis/': {
-      target: 'http://localhost:8080',
+      target: 'https://api.tuitmud.app',
       pathRewrite: { '^/apis': '' },
     },
   },

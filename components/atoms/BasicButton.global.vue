@@ -1,6 +1,6 @@
 <template>
   <button
-    class="basic-button b-none"
+    class="basic-button b-none align-text-center align-content-center vertical-align-center"
     :class="{
       shadoww: boxShadow,
       'main-color': mainColor,

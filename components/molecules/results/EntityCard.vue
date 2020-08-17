@@ -65,7 +65,7 @@ export default {
     color: black;
     text-overflow: ellipsis;
     overflow: hidden;
-    max-width: 6em;
+    max-width: 6.5em;
   }
   p {
     font-weight: 500;

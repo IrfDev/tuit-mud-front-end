@@ -1,7 +1,5 @@
 <template>
-  <div
-    class="login container-fluid align-items-center align-self-center text-center"
-  >
+  <div class="login container-fluid align-items-center align-self-center text-center">
     <section class="row justify-content-center m-0">
       <div class="background-page-image col-12 col-lg-5 col-md-9 mt-5">
         <peep action="chill" width="100" />
@@ -22,49 +20,49 @@
 </template>
 
 <script>
-  import BasicCard from '@/components/molecules/BasicCard';
+import BasicCard from '@/components/molecules/BasicCard';
 
-  export default {
-    name: 'LoginTwitter',
+export default {
+  name: 'LoginTwitter',
 
-    head() {
-      return {
-        title: 'Login',
-      };
+  head() {
+    return {
+      title: 'Login',
+    };
+  },
+
+  components: {
+    BasicCard,
+  },
+
+  computed: {
+    contentCard: () =>
+      `Login into your Twitter account and in less than 20 seconds you'll get the results`,
+  },
+
+  methods: {
+    goToTwitterAuth() {
+      window.open('https://api.tuitmud.app/auth/twitter', '_self');
     },
-
-    components: {
-      BasicCard,
-    },
-
-    computed: {
-      contentCard: () =>
-        `Login into your Twitter account and in less than 20 seconds you'll get the results`,
-    },
-
-    methods: {
-      goToTwitterAuth() {
-        window.open('http://localhost:8080/auth/twitter', '_self');
-      },
-    },
-  };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
-  .twitter-login-card {
-    position: absolute;
-    top: 65%;
-  }
-  .peep {
-    background-color: transparent;
-  }
-  .background-page-image {
-    margin-top: 100vw;
-    display: flex;
-  }
-  .login {
-    min-height: 100vh;
-    height: 100%;
-    background-color: $alpha-color;
-  }
+.twitter-login-card {
+  position: absolute;
+  top: 65%;
+}
+.peep {
+  background-color: transparent;
+}
+.background-page-image {
+  margin-top: 100vw;
+  display: flex;
+}
+.login {
+  min-height: 100vh;
+  height: 100%;
+  background-color: $alpha-color;
+}
 </style>

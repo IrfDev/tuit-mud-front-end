@@ -4,15 +4,22 @@
     :class="{ 'p-2 mt-4 round-footer': !isLogin }"
   >
     <div class="logo align-self-center">
-      <img
-        v-if="!isLogin"
-        src="/logo-light.png"
-        class="img-fluid"
-        alt="logo-tuitmud"
-      />
+      <nuxt-link to="/">
+        <img
+          v-if="!isLogin"
+          src="/logo-light.png"
+          class="img-fluid"
+          alt="logo-tuitmud"
+        />
+      </nuxt-link>
     </div>
     <div class="anouncements text-right pr-3">
-      <span>Made with ❤️ by IrfDev </span>
+      <span
+        >Made with ❤️ by
+        <a href="https://irving.digital" rel="noreferrer" target="_blank">
+          @IrfDev
+        </a>
+      </span>
     </div>
   </footer>
 </template>
@@ -30,10 +37,14 @@
 
 <style lang="scss" scoped>
   .footer {
+    a {
+      color: black;
+      font-weight: 700;
+    }
     background-color: $alpha-color;
-    color: white;
+    color: black;
     align-items: center !important;
-    & + .round-footer {
+    &.round-footer {
       border-radius: 16px 16px 0 0;
     }
     .logo {

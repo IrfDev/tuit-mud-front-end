@@ -26,7 +26,7 @@
             hid: 'description',
             name: 'description',
             content:
-              'Know your mood, topics and stuff you like from your Tweets',
+              'Know your mood, topics and stuff you like from your Tweets. Click now and have some fun with us!',
           },
         ],
       };
@@ -36,8 +36,6 @@
 
 <style>
   html {
-    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-      'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 16px;
     word-spacing: 1px;
     -ms-text-size-adjust: 100%;

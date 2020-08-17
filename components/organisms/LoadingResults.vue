@@ -5,6 +5,7 @@
         <h5 v-if="action === 'waiting'">Leyenedo tus tweets...</h5>
         <h5 v-if="action === 'reading'">Analizando tus tweets...</h5>
         <h5 v-if="action === 'ready'">¡Listo!</h5>
+        <!-- <pre>{{ JSON.stringify(this.$store, null, 2) }}</pre> -->
       </div>
       <div v-if="action !== 'ready'" class="text-center">
         <div
@@ -58,7 +59,7 @@
     height: 100vh;
     width: 100vw;
     min-height: 100vh;
-    background: url('/images/loader/background.svg');
+    background: url('/images/Loader/background.svg');
     h5 {
       font: $title-font;
       color: white;
